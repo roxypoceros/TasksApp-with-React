@@ -11,6 +11,13 @@ function TasksList() {
     */
    
   const [tasks, setTasks] = useState([]);
+/* Lo que va a ocurrir cuando agregamos una tarea */
+  const addTask = tarea => {
+    console.log("Tarea agregada");
+    console.log(tarea);
+  }
+
+
   /* Lo siguiente es la lista del componente en jsx */
   return (
     <>
@@ -29,7 +36,7 @@ function TasksList() {
         {
           tasks.map((task) =>
           <Task 
-          texto={task.texto}
+          texto={task.text}
           completed={task.completed}
           />
           )

@@ -2,6 +2,13 @@ import React from "react"
 import "../styles/Task.css"
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
+/* Task tiene 5 props:
+id único para cada tarea
+texto de la tarea
+si la tarea fue completada (T/F)
+2funciones que se llaman en caso de que ocurra un evento:
+completar tarea (cuando den click en texto)
+y borrar tarea */
 function Task({ id, text, completed, completeTask, deleteTask }) {
   return (
     /* A continuación asignar nombre de clase condicional  */
