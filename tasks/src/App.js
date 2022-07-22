@@ -1,6 +1,6 @@
 import "../src/styles/App.css";
 import CatLogo from "./components/CatLogo";
-import TaskForm from "./components/TaskForm";
+import TasksList from "./components/TasksList";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
     <CatLogo />
     <div className="mainListOfTasks">
       <h1>My Tasks</h1>
-      <TaskForm />
+      <TasksList />
 
     </div>
     </div>
