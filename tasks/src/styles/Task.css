@@ -1,4 +1,8 @@
-.taskContainer{
+/* 
+font-family: 'Lato', sans-serif;
+font-family: 'Roboto', sans-serif;
+ */
+.taskContainer {
   width: 500px;
   min-height: 65px;
   background-color: #558c2f;
@@ -11,8 +15,26 @@
   border: 1px solid white;
   cursor: pointer;
 }
-  
-.taskText{
+
+/* colores: el hijo que cumpla con la instrucción
+tendrá ese color */
+
+.taskContainer:nth-child(3n + 1) {
+  background-color: #80d842;
+}
+
+.taskContainer:nth-child(3n + 2) {
+  background-color: #558c2f;
+}
+
+.taskContainer:nth-child(3n + 1) {
+  background-color: #395e1f;
+}
+
+.taskText {
+  color: white;
+  font-family: 'Lato', sans-serif;
+
   width: 100%;
   height: 100%;
   font-size: 20px;
@@ -20,17 +42,17 @@
   align-items: center;
   /* Si el texto de la tarea es muy largo
   el texto va a ser cortado y sigue hacia abajo */
-  overflow-wrap: anywhere; 
+  overflow-wrap: anywhere;
 }
 
-.iconTask{
+.iconTask {
   width: 25px;
   height: 25px;
   margin: 5px;
 }
 
-.taskContainer.completed{
-  background-color: #636663 ;
+.taskContainer.completed {
+  background-color: #636663;
   text-decoration: line-through;
 
 }

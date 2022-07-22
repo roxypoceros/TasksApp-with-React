@@ -18,7 +18,6 @@ function Task({ id, text, completed, completeTask, deleteTask }) {
       /* onClick necesita que su valor sea una función.
       Función anómima se va a ejecutar y va a llamar a completeTask (pasada como prop)*/
       onClick={() => completeTask(id)}>
-        
         {text}
       </div>
       <div className="taskContainerIcons"
