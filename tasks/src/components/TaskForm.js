@@ -19,18 +19,26 @@ const handleInputChange = e => {
 /* Función al dar click en btn que dice Add Task 
 e se recibe como un argumento cuando se da click al btn*/
   const handleSubmit = e => {
+/* para evitar que se vuelva a cargar el formulario cuando lo enviamos */
+e.preventDefault()
+console.log("enviando formulario");
     /* crear una tarea nueva que tiene id (creado con pqt externo)
      y texto escrito por usuario 
      */
     const newTask = {
       id: "33334",
-      text: "Hiiii!"
+      text: input,
+      completed: false
     }
 
   }
 
     return (
-        <form className="task-form">
+        <form className="task-form"
+/* onSubmit es un event listener que se usa cuando se envia formulario
+y llamaremos a la función handleSubmit */
+        onSubmit={ handleSubmit }
+        >
             <input
                 className="inputTask"
                 type="text"
@@ -39,6 +47,7 @@ e se recibe como un argumento cuando se da click al btn*/
 /* onChange es un event listener para detectar cambio y llamara a la 
 función handleInputChange */
                 onChange={handleInputChange}
+
             />
             <button className="taskBtn">
                 Add task
