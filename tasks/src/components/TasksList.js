@@ -12,16 +12,30 @@ function TasksList() {
    
   const [tasks, setTasks] = useState([]);
 /* Lo que va a ocurrir cuando agregamos una tarea */
-  const addTask = tarea => {
-    console.log("Tarea agregada");
-    console.log(tarea);
+  const addTask = task => {
+/* verificar que tarea ingresada tenga texto.
+trim quita espacios al inicio y al final */
+if (task.text.trim()){
+  /* quitar cualquier espacio al principio y al final con trim  */
+task.text = task.text.trim();
+/* tomar estado actual de tareas (todas las tareas que tengo) 
+y agregar al principio la nueva en un arreglo.
+... perador spread convierte las tareas del arreglo en objetos
+individuales */
+const updatedTasks = [task, ...tasks];
+/* A setTasks le paso las tareas actualizadas */
+setTasks(updatedTasks)
+
+}
   }
 
 
   /* Lo siguiente es la lista del componente en jsx */
   return (
     <>
-      <TaskForm /> 
+    {/* Al dar click y enviar el formulario pasamos el prop onSubmit y le 
+    pasamos agregarTarea */}
+      <TaskForm onSubmit={addTask}/> 
       {/* El sig div va a contener una lista de componentes */} 
       <div className='tasksListContainer'>
         {/* para renderizar una lista de componentes Task, 
@@ -36,6 +50,10 @@ function TasksList() {
         {
           tasks.map((task) =>
           <Task 
+          /* al mostrar una lista debemos pasar un prop llamado Key 
+          que debe ser único */
+          key={task.id}
+          id={task.id}
           texto={task.text}
           completed={task.completed}
           />
